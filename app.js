@@ -91,5 +91,7 @@ app.listen(process.env.PORT || 3000, function(){
     console.log("Server running at 3000");
 });
 
+
+// The following you could find in your mailchimp account.
 //API KEY: 0cad88a317afa6bc2ac798231c9785a1-us1
 //LIST ID: 5e154365e8
