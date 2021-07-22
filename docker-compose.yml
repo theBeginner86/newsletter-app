@@ -12,6 +12,8 @@ services:
       - MONGO_INITDB_ROOT_USERNAME=admin
       - MONGO_INITDB_ROOT_PASSWORD=pass
     container_name: mongodb
+    volumes: 
+      - mongodb-data:/data/db
   mongo-express:
     image: mongo-express
     ports: 
@@ -21,3 +23,8 @@ services:
       - ME_CONFIG_MONGODB_ADMINPASSWORD=pass
       - ME_CONFIG_MONGODB_SERVER=mongodb
     container_name: mongo-express
+    depends_on: 
+      - mongodb
+volumes: 
+  mongodb-data:
+    driver: local
