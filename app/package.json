@@ -2,9 +2,10 @@
   "name": "newsletter-signup",
   "version": "1.0.0",
   "description": "This is a dynamic website, which uses apis. It basically works for signing up for a newsletter.",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:start": "nodemon server.js"
   },
   "keywords": [
     "apis",
@@ -20,6 +21,7 @@
     "jquery": "^3.6.0",
     "jsdom": "^16.5.3",
     "mongodb": "^3.6.10",
+    "nodemon": "^2.0.12",
     "request": "^2.88.2"
   }
 }
