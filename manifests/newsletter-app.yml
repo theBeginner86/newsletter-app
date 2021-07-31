@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: newsletter-app-deployment
+  labels:
+    app: newsletter-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: newsletter-app
+  template:
+    metadata:
+      labels:
+        app: newsletter-app
+    spec:
+      containers:
+      - name: newsletter-app
+        image: thebeginner86/newsletter-app:v1.0.4
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3000
+        env:
+          - name: MONGO_POD
+            value: 'mongodb-service'
