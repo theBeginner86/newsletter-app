@@ -30,7 +30,7 @@ app.post("/", function(req, res){
             password
         };
     
-        MongoClient.connect('mongodb://admin:pass@mongodb', {
+        MongoClient.connect(`mongodb://admin:pass@${process.env.MONGO_POD}`, {
             useNewUrlParser: true,
             useUnifiedTopology: true
         },
@@ -42,6 +42,7 @@ app.post("/", function(req, res){
 
             // console.log(client.db);
             let db = client.db("user-account");
+            // db.auth("admin", "pass");
             console.log("DB successfully connected!!!");
             try {
                 
